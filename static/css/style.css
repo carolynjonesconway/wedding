@@ -1,0 +1,30 @@
+/* Bootstrap Overrides */
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+/* ------------------- */
+
+.navbar {
+  background-color: #C2BFB6;
+}
+
+.nav>li>a.current {
+  color: white;
+  text-decoration: underline;
+}
+
+.section {
+  height: 100vh;
+  padding: 50px 0 0 0;
+  border-bottom: 1px solid #C2BFB6;
+  background-image: url("/static/image/invite.jpg");
+  background-size: 100%;
+}
