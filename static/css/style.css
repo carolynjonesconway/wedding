@@ -12,19 +12,63 @@
 
 /* ------------------- */
 
+body {
+  color: #eee;
+  font-size: 16px;
+}
+
 .navbar {
-  background-color: #C2BFB6;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border-bottom: #111;
 }
 
 .nav>li>a.current {
-  color: white;
+  color: #eee;
   text-decoration: underline;
 }
 
-.section {
+.nav>li>a {
+  color: white;
+}
+
+.page {
+  background-color: #222;
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+.page-body {
   height: 100vh;
-  padding: 50px 0 0 0;
-  border-bottom: 1px solid #C2BFB6;
-  background-image: url("/static/image/invite.jpg");
-  background-size: 100%;
+  padding-top: 60px;
+  background-color: #565752;
+}
+
+.page * {
+  margin: auto;
+}
+
+h1 {
+  font-family: "Dancing Script";
+  padding: 0.5em;
+}
+
+form {
+  color: #111;
+}
+
+h1, p, form {
+  text-align: center;
+}
+
+#head-count form a {
+  margin: auto;
+}
+
+input, .btn-default {
+  vertical-align: middle;
+  padding: 6px 0.5em;
+  margin: 0.25em auto;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
