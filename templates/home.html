@@ -25,15 +25,15 @@
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="nav navbar-nav">
         <li class="current"><a href="#home">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="#ourstory">Our Story</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#weddingparty">Wedding Party</a></li>
-        <li><a href="#venue">Venue</a></li>
-        <li><a href="#registry">Registry</a></li>
-        <li><a href="#travel">Travel</a></li>
-        <li><a href="#todoeat">To Do & Eat</a></li>
-        <li><a href="#rsvp">RSVP</a></li>
-        <li><a href="#addtoourstory">Add To Our Story</a></li>
+        <li><a href="#ourstory" class="anchor">Our Story</a></li>
+        <li><a href="#gallery" class="anchor">Gallery</a></li>
+        <li><a href="#weddingparty" class="anchor">Wedding Party</a></li>
+        <li><a href="#venue" class="anchor">Venue</a></li>
+        <li><a href="#registry" class="anchor">Registry</a></li>
+        <li><a href="#travel" class="anchor">Travel</a></li>
+        <li><a href="#todoeat" class="anchor">To Do & Eat</a></li>
+        <li><a href="#rsvp" class="anchor">RSVP</a></li>
+        <li><a href="#addtoourstory" class="anchor">Add To Our Story</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -82,30 +82,63 @@
 
 <a name="rsvp"></a>
 <div id="rsvp" class="page container-fluid">
-  <div class="page-body">
+  <div id="rsvp-carousel"
+       class="carousel slide page-body"
+       data-ride="carousel"
+       data-interval="false"
+       data-wrap="false">
 
     <h1>RSVP</h1>
 
-    <div id="invite-code">
-      <p>Find your invite code on your invitation, and submit it here:</p>
-      <form>
-        <input type="text">
-        <input type="submit" class="btn btn-default">
-      </form>
-    </div>
-
-    <div id="head-count">
-      <p>Who will be joining us?</p>
-      <form>
-        <div>
-          <input type="text">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div id="invite-code" class="item active">
+        <p>Find your invite code on your invitation, and submit it here:</p>
+        <form>
+          <input type="text", value="{{ invite_code or '' }}">
+          <input type="submit" class="btn btn-default">
+        </form>
+      </div>
+      <div id="head-count" class="item">
+        <div id="attendance">
+          <form>
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-default">
+                <input type="radio" name="attendance" value="1">
+                ACCEPT
+              </label>
+              <label class="btn btn-default">
+                <input type="radio" name="attendance" value="0">
+                DECLINE
+              </label>
+            </div>
+          </form>
         </div>
-        <button class="add btn btn-default">Add</button>
-        <button class="submit btn btn-default" type="submit">Save</button>
-      </form>
-    </div>
 
-  </div>
+        <div id="names" style="display: none;">
+          <p>Who will be joining us?</p>
+          <form>
+            <div>
+              <input type="text">
+            </div>
+            <button class="add btn btn-default">Add</button>
+            <button class="submit btn btn-default" type="submit">Save</button>
+          </form>
+        </div>
+
+      </div>
+      <div id="rsvp-thanks" class="item">
+        <p>Thank you! We can't wait to see you this fall.</p>
+      </div>
+    </div>
+    <!-- Controls -->
+<!--     <a class="left carousel-control" href="#rsvp-carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#rsvp-carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a> -->
+  </div> <!-- Carousel -->
 </div>
 
 <a name="addtoourstory"></a>

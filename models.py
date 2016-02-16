@@ -31,6 +31,9 @@ class Invite(db.Model):
     head_count = db.Column(db.Integer, nullable=False, default=1)
     created_at = db.Column(db.DateTime(timezone=True), nullable=False, default=datetime.utcnow)
 
+    def __repr__(self):
+        return '[INVITE - Code: {}]'.format(self.code) if self.id else '[INVITE (unsaved)]'
+
     @property
     def code(self):
         if self.id is None:
@@ -47,17 +50,11 @@ class Invite(db.Model):
         matching_invite = cls.query.get(invite_id)
         return matching_invite or None
 
-    def __repr__(self):
-        return '[INVITE - Code: {}]'.format(self.code) if self.id else '[INVITE (unsaved)]'
-
-
-
 def connect_to_db(app):
     app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app
     db.init_app(app)
-
 
 def main(creat_all=False):
     from server import app
