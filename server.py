@@ -1,7 +1,7 @@
 import json
 
 from flask import Flask, render_template, request, make_response
-from models import db, connect_to_db, Invite
+from models import db, connect_to_db, Invite, Guest
 from os import environ as env
 
 
@@ -30,8 +30,13 @@ def invite_code():
 @app.route("/rsvp/", methods=["POST"])
 def rsvp():
     code = request.form["inviteCode"]
+    invite = Invite.validate(code)
+    if not invite:
+        return false
+
     attending = request.form["attending"]
-    return 
+    guest = Guest(invite_id=invite.id)
+    return attending
 
 if __name__ == "__main__":
     connect_to_db(app)

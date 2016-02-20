@@ -57,7 +57,7 @@ form {
   color: #111;
 }
 
-h1, p, form {
+h1, h2, h3, h4, h5, h6, p, form {
   text-align: center;
 }
 
@@ -71,4 +71,35 @@ input, .btn-default {
   margin: 0.25em auto;
   border: 1px solid #ccc;
   border-radius: 3px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+td {
+  padding: 10px;
+  text-align: right;
+}
+
+td + td {
+  text-align: left;
+}
+
+#home .page-body {
+  background-image: url("https://scontent.fsnc1-1.fna.fbcdn.net/hphotos-xtf1/v/t1.0-9/1536530_10203464623999233_8015962510613957793_n.jpg?oh=828bac9972cb195b1ed12100319e6ada&oe=575F33C4");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #0F1965;
+}
+
+#ourstory .carousel {
+  margin-top: 100px;
+}
+
+#ourstory .carousel .item {
+  color: black;
+  background-color: #fff;
+  height: 450px;
+  border: 5px solid #333;
 }
