@@ -109,7 +109,7 @@ input, .btn-default {
 /* Homepage */
 
 #home .page-body {
-  background-image: url("/static/image/boston-skyline-overlaid.png");
+  background-image: url("/static/image/boston-skyline.png");
   background-repeat: no-repeat;
   background-position: 20% bottom;
   background-size: cover;
