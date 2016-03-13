@@ -127,6 +127,7 @@ input, .btn-default {
 }
 
 /* animations */
+
 .navbar, #home .text-container {
     -moz-animation-name: dropHeader;
     -moz-animation-iteration-count: 1;
@@ -170,6 +171,7 @@ input, .btn-default {
 }
 
 /* Registry */
+
 #registry .logo img {
   width: 10em;
   height: auto;
@@ -180,7 +182,6 @@ input, .btn-default {
   margin: 20px auto;
 }
 
-
 /* Our Story */
 
 #ourstory .carousel .item {
@@ -188,4 +189,29 @@ input, .btn-default {
   background-color: #fff;
   height: 720px;
   border: 5px solid #333;
+}
+
+
+/* Wedding Party */
+
+#weddingparty .cover-left, #weddingparty .cover-right {
+  height: 80vh;
+  width: 50%;
+  background-color: lightyellow;
+  border: 2px solid yellow;
+}
+
+#weddingparty .cover-left {
+  float: left;
+}
+
+#weddingparty .cover-right {
+  float: right;
+}
+
+/* Venue */
+#venue #map-ica {
+  height: 80%;
+  width: 100%;
+  max-width: 550px;
 }

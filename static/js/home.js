@@ -103,65 +103,65 @@ var rsvp = (function(){
 
 
 
-// // RSVP PAGE
-// ;(function($){
+// RSVP PAGE
+;(function($){
 
-//     // VARIABLES
-//     var inviteCodePage = $('#rsvp #invite-code'),
-//         headCountPage = $('#rsvp #head-count'),
-//         submitInviteCode = $('#rsvp #invite-code [type="submit"]');
+    // VARIABLES
+    var inviteCodePage = $('#rsvp #invite-code'),
+        headCountPage = $('#rsvp #head-count'),
+        submitInviteCode = $('#rsvp #invite-code [type="submit"]');
 
-//     // INITIALIZE
-//     headCountPage.hide();
+    // INITIALIZE
+    headCountPage.hide();
 
-//     var inviteCodeForm = (function(){
+    var inviteCodeForm = (function(){
 
-//         // VARIABLES
-//         var _form = inviteCodePage.find("form");
+        // VARIABLES
+        var _form = inviteCodePage.find("form");
 
-//         // EVENT HANDLERS
-//         submitInviteCode.on("click", function(evt){
-//             evt.preventDefault();
+        // EVENT HANDLERS
+        submitInviteCode.on("click", function(evt){
+            evt.preventDefault();
             
-//             inviteCodePage.hide();
-//             headCountPage.show();
-//         });
+            inviteCodePage.hide();
+            headCountPage.show();
+        });
 
-//     }());
+    }());
 
-//     var headCountForm = (function(){
+    var headCountForm = (function(){
 
-//         // VARIABLES
-//         var _form = headCountPage.find("form"),
-//             inputsDiv = _form.find('input[type="text"]').first().parent(),
-//             addBtn = headCountPage.find('.add'),
-//             saveBtn = headCountPage.find('[type="submit"]'),
-//             field;
+        // VARIABLES
+        var _form = headCountPage.find("form"),
+            inputsDiv = _form.find('input[type="text"]').first().parent(),
+            addBtn = headCountPage.find('.add'),
+            saveBtn = headCountPage.find('[type="submit"]'),
+            field;
 
-//         // EVENT HANDLERS
-//         addBtn.on("click", addField);
-//         saveBtn.on("click", submitAttendees);
+        // EVENT HANDLERS
+        addBtn.on("click", addField);
+        saveBtn.on("click", submitAttendees);
 
-//         function addField (evt) {
-//             evt.preventDefault();
-//             field = $('<input>', {type: "text"}).css("display", "block");
-//             inputsDiv.append(field);
-//         };
+        function addField (evt) {
+            evt.preventDefault();
+            field = $('<input>', {type: "text"}).css("display", "block");
+            inputsDiv.append(field);
+        };
 
-//         function submitAttendees (evt) {
-//             evt.preventDefault();
-//             var names = inputsDiv.find('input').map(
-//                 function(){
-//                     return $(this).val()
-//                 }
-//             ).get();
-//             // FIXME
-//             console.log(names);
-//         };
+        function submitAttendees (evt) {
+            evt.preventDefault();
+            var names = inputsDiv.find('input').map(
+                function(){
+                    return $(this).val()
+                }
+            ).get();
+            // FIXME
+            console.log(names);
+        };
 
-//         return {
-//             addField: addField
-//         }
-//     }());
+        return {
+            addField: addField
+        }
+    }());
 
-// }(jQuery));
+}(jQuery));
