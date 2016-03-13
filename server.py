@@ -1,12 +1,13 @@
 import json
 
 from flask import Flask, render_template, request, make_response
-from models import db, connect_to_db, Invite, Guest
 from os import environ as env
+from sys import argv
 
+from models import db, connect_to_db, Invite, Guest
 
 app = Flask(__name__)
-DEBUG = 'DEBUG' in env
+DEBUG = 'DEBUG' in argv
 PORT = env.get('PORT', 5000)
 
 

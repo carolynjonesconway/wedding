@@ -10,30 +10,35 @@
   text-align: center;
 }
 
-/* ------------------- */
+/* General Styles */
 
 body {
   color: #eee;
-  font-size: 16px;
+  font-family: monospace;
+  font-size: 1.5em;
+}
+
+html, body, .page {
+  background-color: #1D2142;
 }
 
 .navbar {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
+  background-color: rgba(255,255,255, 0.6);
   border-bottom: #111;
 }
 
-.nav>li>a.current {
-  color: #eee;
+.navbar-default .nav>li>a.current, .navbar-default .nav>li>a:hover {
+  color: #0F1965;
+  font-weight: bold;
   text-decoration: underline;
 }
 
-.nav>li>a {
-  color: white;
+.navbar-default .nav>li>a {
+  color: #0F1965;
+  font-weight: bold;
 }
 
 .page {
-  background-color: #222;
   padding-left: 75px;
   padding-right: 75px;
 }
@@ -41,7 +46,6 @@ body {
 .page-body {
   height: 100vh;
   padding-top: 60px;
-  background-color: #565752;
 }
 
 .page * {
@@ -50,6 +54,7 @@ body {
 
 h1 {
   font-family: "Dancing Script";
+  font-size: 60px;
   padding: 0.5em;
 }
 
@@ -73,33 +78,114 @@ input, .btn-default {
   border-radius: 3px;
 }
 
-h1 {
-  font-size: 60px;
+.fill-line {
+  display: inline-block;
+  width: 100%;
 }
 
-td {
-  padding: 10px;
-  text-align: right;
+.large {
+  font-family: "Dancing Script";
+  font-size: 6em;
+  line-height: 1;
 }
 
-td + td {
-  text-align: left;
+.medium {
+  font-size: 1.5em;
 }
+
+.small {
+  font-size: 1.15em;
+  line-height: 1.5;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
+}
+
+/* Homepage */
 
 #home .page-body {
-  background-image: url("https://scontent.fsnc1-1.fna.fbcdn.net/hphotos-xtf1/v/t1.0-9/1536530_10203464623999233_8015962510613957793_n.jpg?oh=828bac9972cb195b1ed12100319e6ada&oe=575F33C4");
+  background-image: url("/static/image/boston-skyline-overlaid.png");
   background-repeat: no-repeat;
+  background-position: 20% bottom;
   background-size: cover;
   color: #0F1965;
+  padding: 60px;
 }
 
-#ourstory .carousel {
-  margin-top: 100px;
+#home .text-container {
+  float: right;
+  text-align: justify;
 }
+
+#home .text-container div {
+  line-height: 1;
+}
+
+/* animations */
+.navbar, #home .text-container {
+    -moz-animation-name: dropHeader;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-in-out;
+    -moz-animation-duration: 1.25s;
+
+    -webkit-animation-name: dropHeader;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 1.25s;
+
+    animation-name: dropHeader;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1.25s;
+}
+
+@-moz-keyframes dropHeader {
+    0% {
+        -moz-transform: translateY(-360px);
+    }
+    100% {
+        -moz-transform: translateY(0);
+    }
+}
+@-webkit-keyframes dropHeader {
+    0% {
+        -webkit-transform: translateY(-360px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}
+@keyframes dropHeader {
+    0% {
+        transform: translateY(-360px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Registry */
+#registry .logo img {
+  width: 10em;
+  height: auto;
+}
+
+#registry .logo {
+  display: table;
+  margin: 20px auto;
+}
+
+
+/* Our Story */
 
 #ourstory .carousel .item {
   color: black;
   background-color: #fff;
-  height: 450px;
+  height: 720px;
   border: 5px solid #333;
 }
