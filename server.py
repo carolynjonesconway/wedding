@@ -14,7 +14,7 @@ PORT = env.get('PORT', 5000)
 @app.route("/")
 def home():
     invite_code = request.cookies.get("conWedInvCode", "")
-    return render_template("home.html", invite_code=invite_code)
+    return render_template("main.html", invite_code=invite_code)
 
 @app.route("/invite-code/", methods=["POST"])
 def invite_code():

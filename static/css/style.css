@@ -53,17 +53,13 @@ html, body, .page {
 }
 
 h1 {
-  font-family: "Dancing Script";
+  font-family: "Dancing Script", cursive;
   font-size: 60px;
   padding: 0.5em;
 }
 
 form {
   color: #111;
-}
-
-h1, h2, h3, h4, h5, h6, p, form {
-  text-align: center;
 }
 
 #head-count form a {
@@ -84,7 +80,7 @@ input, .btn-default {
 }
 
 .large {
-  font-family: "Dancing Script";
+  font-family: "Dancing Script", cursive;
   font-size: 6em;
   line-height: 1;
 }
@@ -209,7 +205,26 @@ input, .btn-default {
   float: right;
 }
 
+/* Travel */
+#travel .map {
+  height: 550px;
+}
+#floating-panel .map {
+  position: absolute;
+  top: 10px;
+  left: 20%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  color: #0F1965;
+  line-height: 30px;
+  padding: 0 10px;
+}
+
 /* Venue */
+
 #venue #map-ica {
   height: 80%;
   width: 100%;

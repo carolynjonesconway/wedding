@@ -165,3 +165,24 @@ var rsvp = (function(){
     }());
 
 }(jQuery));
+
+// WEDDING PARTY
+;(function($){
+
+    var covers = $(".cover-left, .cover-right"),
+        coverLeft = $(".cover-left"),
+        coverRight = $(".cover-right");
+
+    function open() {
+        coverLeft.hide("slide", 400, {
+            direction: "left"
+        });
+        coverRight.hide(400);
+    }
+
+    covers.on("click", function(evt){
+        evt.preventDefault();
+        open();
+    });
+
+}(jQuery));
