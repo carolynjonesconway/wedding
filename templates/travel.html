@@ -29,19 +29,32 @@
 
       <!-- GOOGLE MAP -->
       <div class="floating-panel">
-      <b>Start: </b>
-      <select id="start">
-        <option value="ChIJ51dcSH5w44kR2w1maWhcAGI">The Envoy Hotel</option>
-        <option value="ChIJN0na1RRw44kRRFEtH8OUkww">Boston Logan International Airport</option>
-        <option value="ChIJxTCEOnlw44kROtPtIpMFsXo">Institute of Contemporary Art</option>
-      </select>
-      <b>End: </b>
-      <select id="end">
-        <option value="ChIJxTCEOnlw44kROtPtIpMFsXo">Institute of Contemporary Art</option>
-        <option value="ChIJ51dcSH5w44kR2w1maWhcAGI">The Envoy Hotel</option>
-        <option value="ChIJN0na1RRw44kRRFEtH8OUkww">Boston Logan International Airport</option>
-      </select>
-      </div>
+        <table>
+          <tr>
+            <td>
+              <div class="input-group">
+                <b class="input-group-addon">Start: </b>
+                <select class="input-group-select-right form-control" id="start">
+                  <option value="ChIJ51dcSH5w44kR2w1maWhcAGI">The Envoy Hotel</option>
+                  <option value="ChIJN0na1RRw44kRRFEtH8OUkww">Boston Logan International Airport</option>
+                  <option value="ChIJxTCEOnlw44kROtPtIpMFsXo">Institute of Contemporary Art</option>
+                </select>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <b class="input-group-addon">End: </b>
+                <select class="input-group-select-left form-control" id="end">
+                  <option value="ChIJxTCEOnlw44kROtPtIpMFsXo">Institute of Contemporary Art</option>
+                  <option value="ChIJ51dcSH5w44kR2w1maWhcAGI">The Envoy Hotel</option>
+                  <option value="ChIJN0na1RRw44kRRFEtH8OUkww">Boston Logan International Airport</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+      </div> <!-- .floating-panel -->
       <div class="map"></div>
       <!--  END GOOGLE EXAMPLE -->
 

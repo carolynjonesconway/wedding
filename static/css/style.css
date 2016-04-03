@@ -102,6 +102,33 @@ input, .btn-default {
   text-align: justify;
 }
 
+.input-group .input-group-select-right, .input-group .input-group-select-left {
+  -webkit-appearance: none;
+}
+
+.img-card {
+  display: inline-block;
+  padding: 1em;
+  background: white;
+  color: #1D2142;
+}
+
+select.form-control {
+  background-color: white;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Chevron_down_font_awesome.svg/512px-Chevron_down_font_awesome.svg.png") no-repeat contain 0px 0px;
+  padding-left: 0px;
+}
+
+.input-group .input-group-select-right {
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+}
+
+.input-group .input-group-select-left {
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+}
+
 /* Homepage */
 
 #home .page-body {
