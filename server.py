@@ -1,14 +1,14 @@
 import json
 
 from flask import Flask, render_template, request, make_response
-from os import environ as env
+import os
 from sys import argv
 
 from models import db, connect_to_db, Invite, Guest
 
 app = Flask(__name__)
 DEBUG = 'DEBUG' in argv
-PORT = env.get('PORT', 5000)
+PORT = os.environ.get('PORT', 5000)
 
 
 @app.route("/")
@@ -41,4 +41,5 @@ def rsvp():
 
 if __name__ == "__main__":
     connect_to_db(app)
+    os.system("make static")
     app.run(debug=DEBUG, host='0.0.0.0', port=PORT)

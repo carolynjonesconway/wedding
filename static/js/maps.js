@@ -20,8 +20,8 @@ function initMap() {
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   directionsService.route({
-    origin: {'placeId': document.getElementById('start').value},
-    destination: {'placeId': document.getElementById('end').value},
+    origin: document.getElementById('start').value,
+    destination: document.getElementById('end').value,
     travelMode: google.maps.TravelMode.DRIVING
   }, function(response, status) {
     if (status === google.maps.DirectionsStatus.OK) {
