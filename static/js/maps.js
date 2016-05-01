@@ -27,7 +27,10 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     if (status === google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
     } else {
-      window.alert('Directions request failed due to ' + status);
+      var consoleMsg = "Directions request failed due to " + status,
+          flashMsg = "Oops! Google Directions are currenty unavailable.";
+      console.warn ? console.warn(consoleMsg) : console.log(msg);
+      flash(flashMsg, "error");
     }
   });
 }

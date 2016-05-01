@@ -1,7 +1,8 @@
-.navbar{-moz-animation-duration:1.25s;-moz-animation-iteration-count:1;-moz-animation-name:dropHeader;-moz-animation-timing-function:ease-in-out;-webkit-animation-duration:1.25s;-webkit-animation-iteration-count:1;-webkit-animation-name:dropHeader;-webkit-animation-timing-function:ease-in-out;animation-duration:1.25s;animation-iteration-count:1;animation-name:dropHeader;animation-timing-function:ease-in-out;background-color:rgba(255,255,255,0.6);}
+@font-face{font-family:"Raleway";src:url("/static/fonts/raleway/Raleway-Medium.ttf") format("truetype");}
+.navbar{background-color:rgba(255,255,255,0.6);}
 .navbar .navbar-nav{display:inline-block;float:none;vertical-align:top;}
 .navbar .navbar-collapse{text-align:center;}
-html,body{background-color:#1d2142;color:#eeeeee;font-family:monospace;font-size:16px;}
+html,body{background-color:#1d2142;color:#eeeeee;font-family:Raleway;font-size:16px;}
 .page{background-color:#1d2142;padding-left:75px;padding-right:75px;}
 .page *{margin:auto;}
 .navbar-default .nav>li>a.current{color:#0f1965;font-weight:bold;text-decoration:underline;}
@@ -20,23 +21,16 @@ input{border-radius:3px;border:1px solid #cccccc;margin:0.25em auto;padding:6px 
 .justify{text-align:justify;}
 .input-group .input-group-select-right{-webkit-appearance:none;-webkit-border-bottom-left-radius:0px;-webkit-border-top-left-radius:0px;padding-left:1em;}
 .input-group .input-group-select-left{-webkit-appearance:none;-webkit-border-bottom-right-radius:0px;-webkit-border-top-right-radius:0px;padding-left:1em;}
-.img-card{background:white;color:#1d2142;display:inline-block;padding:1em;}
+.img-card{position:relative;}
+.img-card img{max-width:200px;min-width:200px;}
+.img-card .caption{background-color:rgba(255,255,255,0.6);border-top:1px solid #ffffff;bottom:0;color:#0f1965;left:0;padding-top:10px;padding-bottom:10px;position:absolute;max-width:200px;min-width:200px;}
 select.form-control{background-color:white;background:url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Chevron_down_font_awesome.svg/512px-Chevron_down_font_awesome.svg.png") no-repeat contain 0px 0px;padding-left:0px;}
 #home .page-body{background-image:url("/static/image/boston-skyline.png");background-position:20% bottom;background-repeat:no-repeat;background-size:cover;color:#0f1965;padding:60px;}
-#home .text-container{-moz-animation-duration:1.25s;-moz-animation-iteration-count:1;-moz-animation-name:dropHeader;-moz-animation-timing-function:ease-in-out;-webkit-animation-duration:1.25s;-webkit-animation-iteration-count:1;-webkit-animation-name:dropHeader;-webkit-animation-timing-function:ease-in-out;animation-duration:1.25s;animation-iteration-count:1;animation-name:dropHeader;animation-timing-function:ease-in-out;float:right;text-align:justify;}
+#home .text-container{float:right;text-align:justify;}
 #home .text-container div{line-height:1;}
 #registry .logo{display:table;margin:20px auto;}
 #registry .logo img{height:auto;width:10em;}
 #ourstory .carousel .item{background-color:#ffffff;border:5px solid #333333;color:black;height:720px;}
-#weddingparty .cover-left,#weddingparty .cover-right{background-color:lightyellow;border:2px solid yellow;height:80vh;width:50%;}
-#weddingparty .cover-left{float:left;}
-#weddingparty .cover-right{float:right;}
 #travel .map{height:550px;}
 #floating-panel .map{border:1px solid #999999;color:#0f1965;left:20%;line-height:30px;padding:0 10px;padding:5px;position:absolute;text-align:center;top:10px;z-index:5;}
 #venue #map-ica{height:80%;max-width:550px;width:100%;}
-@-moz-keyframes dropHeader{0%{-moz-transform:translateY(-360px);}
-100%{-moz-transform:translateY(0);}}
-@-webkit-keyframes dropHeader{0%{-webkit-transform:translateY(-360px);}
-100%{-webkit-transform:translateY(0);}}
-@keyframes dropHeader{0%{transform:translateY(-360px);}
-100%{transform:translateY(0);}}

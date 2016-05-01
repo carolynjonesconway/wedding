@@ -2,3 +2,8 @@
 env/
 *.pyc
 *cache*
+static/js/noty-2.3.8/
+static/less/
+Makefile
+diff.txt
+static/fonts/

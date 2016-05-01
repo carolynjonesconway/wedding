@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script:700,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/static/css/animate.css">
     <link rel="stylesheet" type="text/css" href="/static/css/style.min.css">
     <title>EJ & Coco's Wedding</title>
 </head>
@@ -22,7 +23,7 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="navbar">
+    <div class="collapse navbar-collapse animated slideInDown" id="navbar">
       <ul class="nav navbar-nav">
         <li class="current"><a href="#home">Home<span class="sr-only">(current)</span></a></li>
         <!-- <li><a href="#rsvp" class="anchor">RSVP</a></li> -->
@@ -39,7 +40,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-{% include 'home.html' %}
+{% include 'landing.html' %}
 {% include 'weddingparty.html' %}
 {% include 'venue.html' %}
 {% include 'travel.html' %}
@@ -47,6 +48,8 @@
 
 <script defer src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 <script defer src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script defer src="/static/js/libs/noty-2.3.8.min.js"></script>
+<script defer src="/static/js/alerts.js"></script>
 <script defer src="/static/js/maps.js"></script>
 <script defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyASSDLUc2gG42lfiBDPkU8UFbjTwPeLMpg&callback=initMap"></script>
 <script defer src="/static/js/home.js"></script>
