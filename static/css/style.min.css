@@ -1,3 +1,4 @@
+@font-face{font-family:"Dancing Script";src:url("/static/fonts/dancing_script/DancingScript-Regular.ttf") format("truetype");}
 @font-face{font-family:"Raleway";src:url("/static/fonts/raleway/Raleway-Medium.ttf") format("truetype");}
 .navbar{background-color:rgba(255,255,255,0.6);}
 .navbar .navbar-nav{display:inline-block;float:none;vertical-align:top;}
