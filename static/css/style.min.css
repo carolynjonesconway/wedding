@@ -26,14 +26,15 @@ input{border-radius:3px;border:1px solid #cccccc;margin:0.25em auto;padding:6px 
 .input-group .input-group-select-right{-webkit-appearance:none;-webkit-border-bottom-left-radius:0px;-webkit-border-top-left-radius:0px;padding-left:1em;}
 .input-group .input-group-select-left{-webkit-appearance:none;-webkit-border-bottom-right-radius:0px;-webkit-border-top-right-radius:0px;padding-left:1em;}
 .img-card{position:relative;}
-.img-card img{max-width:200px;min-width:200px;}
-.img-card .caption{background:fade(rgba(255,255,255,0.6),20%);border-top:1px solid #ffffff;bottom:0;color:#0f1965;left:0;padding-top:10px;padding-bottom:10px;position:absolute;max-width:200px;min-width:200px;}
+.img-card .caption{background:rgba(255,255,255,0.6);border-top:1px solid #ffffff;bottom:0;color:#0f1965;left:0;padding-top:10px;padding-bottom:10px;position:absolute;}
+.img-card img,.img-card .caption{max-width:200px;min-width:200px;}
 select.form-control{background-color:white;background:url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Chevron_down_font_awesome.svg/512px-Chevron_down_font_awesome.svg.png") no-repeat contain 0px 0px;padding-left:0px;}
 #home .page-body{background-image:url("/static/image/boston-skyline.png");background-position:20% bottom;background-repeat:no-repeat;background-size:cover;color:#0f1965;padding:60px;}
 #home .text-container{float:right;text-align:justify;}
 #home .text-container div{line-height:1;}
 #weddingparty #bridesmaids .row,#weddingparty #groomsmen .row{margin-bottom:10px;}
 #registry .logo{display:table;margin:20px auto;}
+#registry .logo:hover{-webkit-animation:swing 1s;animation:swing 1s;}
 #registry .logo img{height:auto;width:10em;}
 #ourstory .carousel .item{background-color:#ffffff;border:5px solid #333333;color:black;height:720px;}
 #travel .map{height:550px;}
