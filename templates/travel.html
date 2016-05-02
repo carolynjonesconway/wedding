@@ -3,7 +3,7 @@
   <div class="page-body">
 
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-xs-12 col-md-5">
 
         <div class="row">
           <div class="col-xs-12">
@@ -25,39 +25,35 @@
         </div> <!-- .row -->
 
       </div> <!-- .col-md-4 -->
-      <div class="col-md-7">
-
-      <!-- GOOGLE MAP -->
-      <div class="floating-panel">
-        <table>
-          <tr>
-            <td>
-              <div class="input-group">
-                <b class="input-group-addon">Start: </b>
-                <select class="input-group-select-right form-control" id="start">
-                  <option value="ChIJ51dcSH5w44kR2w1maWhcAGI">The Envoy Hotel</option>
-                  <option value="ChIJN0na1RRw44kRRFEtH8OUkww">Boston Logan International Airport</option>
-                  <option value="ChIJxTCEOnlw44kROtPtIpMFsXo">Institute of Contemporary Art</option>
-                </select>
-              </div>
-            </td>
-            <td>
-              <div class="input-group">
-                <b class="input-group-addon">End: </b>
-                <select class="input-group-select-left form-control" id="end">
-                  <option value="ChIJxTCEOnlw44kROtPtIpMFsXo">Institute of Contemporary Art</option>
-                  <option value="ChIJ51dcSH5w44kR2w1maWhcAGI">The Envoy Hotel</option>
-                  <option value="ChIJN0na1RRw44kRRFEtH8OUkww">Boston Logan International Airport</option>
-                </select>
-              </div>
-            </td>
-          </tr>
-        </table>
-
-      </div> <!-- .floating-panel -->
-      <div class="map"></div>
-      <!--  END GOOGLE EXAMPLE -->
-
+      <div class="hidden-xs col-md-7">
+        <!-- GOOGLE MAP -->
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="input-group">
+              <b class="input-group-addon">Start: </b>
+              <select class="input-group-select-right form-control" id="start">
+                <option value="ChIJ51dcSH5w44kR2w1maWhcAGI">The Envoy Hotel</option>
+                <option value="ChIJN0na1RRw44kRRFEtH8OUkww">Boston Logan International Airport</option>
+                <option value="ChIJxTCEOnlw44kROtPtIpMFsXo">Institute of Contemporary Art</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="input-group">
+              <b class="input-group-addon">End: </b>
+              <select class="input-group-select-left form-control" id="end">
+                <option value="ChIJxTCEOnlw44kROtPtIpMFsXo">Institute of Contemporary Art</option>
+                <option value="ChIJ51dcSH5w44kR2w1maWhcAGI">The Envoy Hotel</option>
+                <option value="ChIJN0na1RRw44kRRFEtH8OUkww">Boston Logan International Airport</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="map"></div>
+          </div>
+        </div>
       </div> <!-- .col-md-8 -->
     </div> <!-- .row -->
 
