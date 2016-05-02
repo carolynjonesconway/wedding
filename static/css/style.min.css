@@ -1,5 +1,8 @@
 @font-face{font-family:"Dancing Script";src:url("/static/fonts/dancing_script/DancingScript-Regular.ttf") format("truetype");}
 @font-face{font-family:"Raleway";src:url("/static/fonts/raleway/Raleway-Medium.ttf") format("truetype");}
+.noty_bar.noty_type_information{color:#0f1965;}
+.noty_bar .noty_message{font-size:15px !important;}
+.noty_bar .close{line-height:inherit;float:right;padding-left:3px;padding-bottom:3px;}
 .navbar{background-color:rgba(255,255,255,0.6);}
 .navbar .navbar-nav{display:inline-block;float:none;vertical-align:top;}
 .navbar .navbar-collapse{text-align:center;}
@@ -24,11 +27,12 @@ input{border-radius:3px;border:1px solid #cccccc;margin:0.25em auto;padding:6px 
 .input-group .input-group-select-left{-webkit-appearance:none;-webkit-border-bottom-right-radius:0px;-webkit-border-top-right-radius:0px;padding-left:1em;}
 .img-card{position:relative;}
 .img-card img{max-width:200px;min-width:200px;}
-.img-card .caption{background-color:rgba(255,255,255,0.6);border-top:1px solid #ffffff;bottom:0;color:#0f1965;left:0;padding-top:10px;padding-bottom:10px;position:absolute;max-width:200px;min-width:200px;}
+.img-card .caption{background:fade(rgba(255,255,255,0.6),20%);border-top:1px solid #ffffff;bottom:0;color:#0f1965;left:0;padding-top:10px;padding-bottom:10px;position:absolute;max-width:200px;min-width:200px;}
 select.form-control{background-color:white;background:url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Chevron_down_font_awesome.svg/512px-Chevron_down_font_awesome.svg.png") no-repeat contain 0px 0px;padding-left:0px;}
 #home .page-body{background-image:url("/static/image/boston-skyline.png");background-position:20% bottom;background-repeat:no-repeat;background-size:cover;color:#0f1965;padding:60px;}
 #home .text-container{float:right;text-align:justify;}
 #home .text-container div{line-height:1;}
+#weddingparty #bridesmaids .row,#weddingparty #groomsmen .row{margin-bottom:10px;}
 #registry .logo{display:table;margin:20px auto;}
 #registry .logo img{height:auto;width:10em;}
 #ourstory .carousel .item{background-color:#ffffff;border:5px solid #333333;color:black;height:720px;}

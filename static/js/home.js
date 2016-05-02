@@ -13,6 +13,15 @@
     });
 }());
 
+// Countdown
+flash(daysTo("October 9, 2016 00:00:00") + " days to go!", {timeout: false});
+function daysTo(dateString) {
+    var targ = new Date(dateString),
+        now = new Date(),
+        delta_ms = targ - now,
+        delta_days = delta_ms/1000/60/60/24;
+    return Math.ceil(delta_days);
+}
 
 var rsvp = (function(){
     var page = $('.page#rsvp'),

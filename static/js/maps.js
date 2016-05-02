@@ -1,4 +1,3 @@
-
 function initMap() {
   var map = new google.maps.Map($("#travel .map")[0], {
         zoom: 8,
@@ -10,27 +9,34 @@ function initMap() {
   directionsDisplay.setMap(map);
 
   var updateRoute = function() {
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
+    return calculateAndDisplayRoute(directionsService, directionsDisplay);
   };
-
   updateRoute();
-  document.getElementById('start').addEventListener('change', updateRoute);
-  document.getElementById('end').addEventListener('change', updateRoute);
+  $("#start").on('change', updateRoute);
+  $("#end").on('change', updateRoute);
 }
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  var d = $.Deferred();
+  window.origin = $("#start").val();
+  window.destination = $("#end").val();
   directionsService.route({
-    origin: document.getElementById('start').value,
-    destination: document.getElementById('end').value,
+    origin: $("#start").val(),
+    destination: $("#end").val(),
     travelMode: google.maps.TravelMode.DRIVING
   }, function(response, status) {
+    window.resp = response;
+    window.gm = google.maps
     if (status === google.maps.DirectionsStatus.OK) {
+      d.resolve();
       directionsDisplay.setDirections(response);
     } else {
-      var consoleMsg = "Directions request failed due to " + status,
+      d.reject(response, status);
+      var consoleMsg = "Google Maps API warning: Directions failed due to " + status,
           flashMsg = "Oops! Google Directions are currenty unavailable.";
       console.warn ? console.warn(consoleMsg) : console.log(msg);
-      flash(flashMsg, "error");
+      flash(flashMsg, {type: "error"});
     }
   });
+  return d.promise();
 }

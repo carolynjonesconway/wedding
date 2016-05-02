@@ -1,16 +1,20 @@
-function flash(msg, type, duration) {
+function flash(msg, settings) {
     if (!msg) { return }
-    if (type === "info") { type = "information"; }
-    var n = noty({
+    settings = settings || {};
+    if (settings.type === "info") { settings.type = "information"; }
+    notySettings = {
         text        : msg,
-        type        : type || "information",
-        layout      : 'topLeft',
+        type        : settings.type || "information",
+        layout      : 'bottomCenter',
         theme       : "bootstrapTheme" || "relax",
-        timeout: duration || 5000,
+        template: '<div class="noty_message"><div class="noty_close"></div><span class="noty_text"></span></div>',
+        timeout: settings.timeout != undefined ? settings.timeout : 6000,
+        closeWith: ["click", "button"],
         animation: {
             open: 'animated bounceInLeft', // Animate.css class names
-            close: 'animated bounceOutLeft', // Animate.css class names
+            close: 'animated bounceOutLeft' // Animate.css class names
         }
-    });
-    return n;
+    }
+    notySettings = $.extend(true, notySettings, settings);
+    return noty(notySettings);
 }
