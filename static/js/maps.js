@@ -18,15 +18,11 @@ function initMap() {
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   var d = $.Deferred();
-  window.origin = $("#start").val();
-  window.destination = $("#end").val();
   directionsService.route({
-    origin: $("#start").val(),
-    destination: $("#end").val(),
+    origin: { placeId: $("#start").val() },
+    destination: { placeId: $("#end").val() },
     travelMode: google.maps.TravelMode.DRIVING
   }, function(response, status) {
-    window.resp = response;
-    window.gm = google.maps
     if (status === google.maps.DirectionsStatus.OK) {
       d.resolve();
       directionsDisplay.setDirections(response);

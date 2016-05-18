@@ -7,7 +7,7 @@ from sys import argv
 from models import db, connect_to_db, Invite, Guest
 
 app = Flask(__name__)
-DEBUG = 'DEBUG' in argv
+DEBUG = 'PROD' not in os.environ
 PORT = os.environ.get('PORT', 5000)
 
 
