@@ -23,8 +23,8 @@ input{border-radius:3px;border:1px solid #cccccc;margin:0.25em auto;padding:6px 
 .small{font-size:1.15em;line-height:1.5;}
 .align-center{text-align:center;}
 .justify{text-align:justify;}
-.input-group .input-group-select-right{-webkit-appearance:none;-webkit-border-bottom-left-radius:0px;-webkit-border-top-left-radius:0px;padding-left:1em;}
-.input-group .input-group-select-left{-webkit-appearance:none;-webkit-border-bottom-right-radius:0px;-webkit-border-top-right-radius:0px;padding-left:1em;}
+.input-group .input-group-select{cursor:pointer;-webkit-appearance:none;-webkit-border-bottom-left-radius:0px;-webkit-border-top-left-radius:0px;padding-left:1em;}
+.text-dark{color:#0f1965;}
 .img-card{position:relative;}
 .img-card .caption{background:rgba(255,255,255,0.6);border-top:1px solid #ffffff;bottom:0;color:#0f1965;left:0;padding-top:10px;padding-bottom:10px;position:absolute;}
 .img-card img,.img-card .caption{max-width:200px;min-width:200px;}
@@ -37,5 +37,8 @@ select.form-control{background-color:white;background:url("https://upload.wikime
 #registry .logo:hover{-webkit-animation:swing 1s;animation:swing 1s;}
 #registry .logo img{height:auto;width:10em;}
 #ourstory .carousel .item{background-color:#ffffff;border:5px solid #333333;color:black;height:720px;}
-#travel .map,#travel #map{height:550px;}
+#travel .map,#travel #map{height:550px;border:10px solid white;}
+#travel #map-controls{background:#ffffff;padding:20px;margin:20px;-webkit-box-shadow:0 0 5px gray;-moz-box-shadow:0 0 5px gray;box-shadow:0 0 5px gray;}
+#travel #map-controls select{display:inline-block;}
+#travel #map-controls h3{color:#0f1965;}
 #floating-panel .map{border:1px solid #999999;color:#0f1965;left:20%;line-height:30px;padding:0 10px;padding:5px;position:absolute;text-align:center;top:10px;z-index:5;}

@@ -1,12 +1,23 @@
+"use strict";
+
 function initMap() {
   var map = new google.maps.Map($("#travel .map")[0], {
         zoom: 8,
-        center: { lat: 42.3065913, lng: -71.045 }
+        center: { lat: 42.3065913, lng: -71.045 },
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            position: google.maps.ControlPosition.BOTTOM_CENTER
+        },
+        fullscreenControl: true
       }),
       directionsService = new google.maps.DirectionsService,
       directionsDisplay = new google.maps.DirectionsRenderer;
 
   directionsDisplay.setMap(map);
+
+  var mapControls = $("#map-controls")[0];
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(mapControls);
 
   var updateRoute = function() {
     return calculateAndDisplayRoute(directionsService, directionsDisplay);
