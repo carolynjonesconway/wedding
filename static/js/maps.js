@@ -9,7 +9,10 @@ function initMap() {
             style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
             position: google.maps.ControlPosition.BOTTOM_CENTER
         },
-        fullscreenControl: true
+        fullscreenControl: true,
+        fullscreenControlOptions: {
+          position: google.maps.ControlPosition.BOTTOM_LEFT
+        }
       }),
       directionsService = new google.maps.DirectionsService,
       directionsDisplay = new google.maps.DirectionsRenderer;

@@ -6,13 +6,13 @@
 .navbar{background-color:rgba(255,255,255,0.6);}
 .navbar .navbar-nav{display:inline-block;float:none;vertical-align:top;}
 .navbar .navbar-collapse{text-align:center;}
-html,body{background-color:#1d2142;color:#eeeeee;font-family:Raleway;font-size:16px;}
-.page{background-color:#1d2142;padding-left:75px;padding-right:75px;}
+html,body{background-color:#1d2142;background-image:radial-gradient(circle farthest-corner at 50% 50%,#0f1965 0%,#1d2142 100%);background-attachment:fixed;color:#eeeeee;font-family:Raleway;font-size:16px;}
+.page{padding-left:75px;padding-right:75px;}
 .page *{margin:auto;}
 .navbar-default .nav>li>a.current{color:#0f1965;font-weight:bold;text-decoration:underline;}
 .navbar-default .nav>li>a{color:#0f1965;font-weight:bold;}
 .navbar-default .nav>li>a:hover{color:#0f1965;font-weight:bold;text-decoration:underline;}
-.page-body{height:100vh;padding-top:60px;}
+.page-body{height:100vh;padding-top:60px;border-left:10px solid white;border-right:10px solid white;}
 h1{font-family:"Dancing Script",cursive;font-size:60px;padding:0.5em;}
 #head-count form a{margin:auto;}
 input{border-radius:3px;border:1px solid #cccccc;margin:0.25em auto;padding:6px 0.5em;vertical-align:middle;}
@@ -42,3 +42,4 @@ select.form-control{background-color:white;background:url("https://upload.wikime
 #travel #map-controls select{display:inline-block;}
 #travel #map-controls h3{color:#0f1965;}
 #floating-panel .map{border:1px solid #999999;color:#0f1965;left:20%;line-height:30px;padding:0 10px;padding:5px;position:absolute;text-align:center;top:10px;z-index:5;}
+.panel{background:rgba(255,255,255,0.8);border:10px solid white;border-radius:0;color:#0f1965;}
