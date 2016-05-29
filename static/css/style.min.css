@@ -1,45 +1,52 @@
-@font-face{font-family:"Dancing Script";src:url("/static/fonts/dancing_script/DancingScript-Regular.ttf") format("truetype");}
-@font-face{font-family:"Raleway";src:url("/static/fonts/raleway/Raleway-Medium.ttf") format("truetype");}
+@font-face{font-family:"Custom Cursive";src:url("/static/fonts/dancing_script/DancingScript-Regular.ttf") format("truetype");}
+@font-face{font-family:"Custom Sans-Serif";src:url("/static/fonts/raleway/Raleway-Medium.ttf") format("truetype");}
+@font-face{font-family:"Custom Sans-Serif";src:url("/static/fonts/raleway/Raleway-Bold.ttf") format("truetype");font-weight:700;}
+@font-face{font-family:"Custom Sans-Serif";src:url("/static/fonts/raleway/Raleway-Light.ttf") format("truetype");font-weight:200;}
 .noty_bar.noty_type_information{color:#0f1965;}
 .noty_bar .noty_message{font-size:15px !important;}
 .noty_bar .close{line-height:inherit;float:right;padding-left:3px;padding-bottom:3px;}
-.navbar{background-color:rgba(255,255,255,0.6);}
+.navbar{background-color:rgba(255,255,255,0.6);border-bottom:2px solid white;}
 .navbar .navbar-nav{display:inline-block;float:none;vertical-align:top;}
 .navbar .navbar-collapse{text-align:center;}
-html,body{background-color:#1d2142;background-image:radial-gradient(circle farthest-corner at 50% 50%,#0f1965 0%,#1d2142 100%);background-attachment:fixed;color:#eeeeee;font-family:Raleway;font-size:16px;}
-.page{padding-left:75px;padding-right:75px;}
-.page *{margin:auto;}
-.navbar-default .nav>li>a.current{color:#0f1965;font-weight:bold;text-decoration:underline;}
-.navbar-default .nav>li>a{color:#0f1965;font-weight:bold;}
-.navbar-default .nav>li>a:hover{color:#0f1965;font-weight:bold;text-decoration:underline;}
-.page-body{height:100vh;padding-top:60px;border-left:10px solid white;border-right:10px solid white;}
-h1{font-family:"Dancing Script",cursive;font-size:60px;padding:0.5em;}
+html,body{background-color:#1d2142;background-image:url("/static/image/boston-skyline.png");background-size:cover;background-attachment:fixed;color:#0f1965;font-family:"Custom Sans-Serif";font-size:16px;}
+.navbar-default .nav>li>a{color:#0f1965;text-transform:uppercase;font-weight:700;font-size:13px;text-decoration:none;}
+.navbar-default .nav>li>a:hover{-webkit-animation:swing 1s;animation:swing 1s;color:#0f1965;}
+.navbar-default .nav>li.active>a{background-color:white;color:#0f1965;}
+.navbar-default .nav>li.active>a:hover,.navbar-default .nav>li.active>a:active{background-color:white;}
+h1{font-family:"Custom Cursive",cursive;font-size:60px;padding:0.5em;}
 #head-count form a{margin:auto;}
 input{border-radius:3px;border:1px solid #cccccc;margin:0.25em auto;padding:6px 0.5em;vertical-align:middle;}
 .btn-default{border-radius:3px;border:1px solid #cccccc;margin:0.25em auto;padding:6px 0.5em;vertical-align:middle;}
 .fill-line{display:inline-block;width:100%;}
-.large{font-family:"Dancing Script",cursive;font-size:6em;line-height:1;}
+h1,.large{font-size:6em;line-height:1;font-family:"Custom Cursive";}
+h1{padding:20px;}
 .medium{font-size:1.5em;}
 .small{font-size:1.15em;line-height:1.5;}
-.align-center{text-align:center;}
-.justify{text-align:justify;}
+.xs{font-size:0.9em;}
+.font-light{font-weight:200;}
+.input-group{-webkit-box-shadow:0 2px 6px rgba(0,0,0,0.3);-moz-box-shadow:0 2px 6px rgba(0,0,0,0.3);box-shadow:0 2px 6px rgba(0,0,0,0.3);}
+.input-group>*{border-radius:0;border:none;}
 .input-group .input-group-select{cursor:pointer;-webkit-appearance:none;-webkit-border-bottom-left-radius:0px;-webkit-border-top-left-radius:0px;padding-left:1em;}
+.cursive{font-family:"Custom Cursive";}
 .text-dark{color:#0f1965;}
 .img-card{position:relative;}
 .img-card .caption{background:rgba(255,255,255,0.6);border-top:1px solid #ffffff;bottom:0;color:#0f1965;left:0;padding-top:10px;padding-bottom:10px;position:absolute;}
 .img-card img,.img-card .caption{max-width:200px;min-width:200px;}
 select.form-control{background-color:white;background:url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Chevron_down_font_awesome.svg/512px-Chevron_down_font_awesome.svg.png") no-repeat contain 0px 0px;padding-left:0px;}
-#home .page-body{background-image:url("/static/image/boston-skyline.png");background-position:20% bottom;background-repeat:no-repeat;background-size:cover;color:#0f1965;padding:60px;}
-#home .text-container{float:right;text-align:justify;}
-#home .text-container div{line-height:1;}
+header .text-container{padding-top:70px;padding-bottom:70px;text-align:justify;color:#0f1965;}
+header .text-container div{line-height:1;}
 #weddingparty #bridesmaids .row,#weddingparty #groomsmen .row{padding:25px 0;}
 #registry .logo{display:table;margin:20px auto;}
 #registry .logo:hover{-webkit-animation:swing 1s;animation:swing 1s;}
 #registry .logo img{height:auto;width:10em;}
 #ourstory .carousel .item{background-color:#ffffff;border:5px solid #333333;color:black;height:720px;}
-#travel .map,#travel #map{height:550px;border:10px solid white;}
-#travel #map-controls{background:#ffffff;padding:20px;margin:20px;-webkit-box-shadow:0 0 5px gray;-moz-box-shadow:0 0 5px gray;box-shadow:0 0 5px gray;}
-#travel #map-controls select{display:inline-block;}
-#travel #map-controls h3{color:#0f1965;}
+.section-dark{background-color:#1d2142;color:white;}
+#travel .map,#travel #map{height:550px;border:3px solid white;}
+#travel #map-controls{margin:20px;}
+#travel #map-controls *{color:#0f1965;}
+#travel #map-controls select{display:inline-block;-webkit-box-shadow:0 0 5px #cccccc;-moz-box-shadow:0 0 5px #cccccc;box-shadow:0 0 5px #cccccc;}
 #floating-panel .map{border:1px solid #999999;color:#0f1965;left:20%;line-height:30px;padding:0 10px;padding:5px;position:absolute;text-align:center;top:10px;z-index:5;}
-.panel{background:rgba(255,255,255,0.8);border:10px solid white;border-radius:0;color:#0f1965;}
+.panel{background:none;border:3px solid white;border-radius:0;color:white;}
+.panel .panel-body{font-weight:lighter;}
+.panel:hover,.panel.panel-solid{background:white;color:#0f1965;}
+.body-content>.container-fluid{padding-top:60px;padding-bottom:60px;}

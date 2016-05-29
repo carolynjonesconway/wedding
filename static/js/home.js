@@ -1,17 +1,17 @@
-// ANCHOR TRANSITIONS
-;(function(){
-    var $root = $('html, body'),
-        $anchor = $('a.anchor');
-    $anchor.click(function() {
-        var href = $.attr(this, 'href');
-        $root.animate({
-            scrollTop: $(href).offset().top
-        }, 500, function () {
-            window.location.hash = href;
-        });
-        return false;
-    });
-}());
+// // ANCHOR TRANSITIONS
+// ;(function(){
+//     var $root = $('html, body'),
+//         $anchor = $('a.anchor');
+//     $anchor.click(function() {
+//         var href = $.attr(this, 'href');
+//         $root.animate({
+//             scrollTop: $(href).offset().top
+//         }, 500, function () {
+//             window.location.hash = href;
+//         });
+//         return false;
+//     });
+// }());
 
 // Countdown
 flash(daysTo("October 9, 2016 00:00:00") + " days to go!", {timeout: false});

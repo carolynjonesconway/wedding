@@ -9,11 +9,18 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <title>Coco & EJ's Wedding</title>
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script defer src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script defer src="/static/js/libs/noty-2.3.8.min.js"></script>
+    <script defer src="/static/js/alerts.js"></script>
+    <script defer src="/static/js/maps.js"></script>
+    <script defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyASSDLUc2gG42lfiBDPkU8UFbjTwPeLMpg&callback=initMap"></script>
+    <script defer src="/static/js/home.js"></script>
+    <script defer src="/static/js/hotels.js"></script>
+    <script defer src="/static/js/scrolling.js"></script>
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar">
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
-    
     <!-- Button to toggle the collapsed navbar -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -27,33 +34,26 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="nav navbar-nav animated slideInDown ">
-        <li class="current"><a href="#home">Home<span class="sr-only">(current)</span></a></li>
-        <!-- <li><a href="#rsvp" class="anchor">RSVP</a></li> -->
-        <!-- <li><a href="#ourstory" class="anchor">Our Story</a></li> -->
-        <!-- <li><a href="#gallery" class="anchor">Gallery</a></li> -->
-        <!-- <li><a href="#weddingparty" class="anchor">Wedding Party</a></li> -->
-        <!-- <li><a href="#venue" class="anchor">Venue & Transportation</a></li> -->
-        <li><a href="#hotels" class="anchor">Lodging</a></li>
-        <li><a href="#travel" class="anchor">Travel</a></li>
-        <!-- <li><a href="#todoeat" class="anchor">To Do & Eat</a></li> -->
-        <li><a href="#registry" class="anchor">Registry</a></li>
-        <!-- <li><a href="#addtoourstory" class="anchor">Add To Our Story</a></li> -->
+        <li class="current"><a href="#home-anchor">Home<span class="sr-only">(current)</span></a></li>
+        <!-- <li><a href="#rsvp-anchor">RSVP</a></li> -->
+        <!-- <li><a href="#ourstory-anchor">Our Story</a></li> -->
+        <!-- <li><a href="#gallery-anchor">Gallery</a></li> -->
+        <!-- <li><a href="#weddingparty-anchor">Wedding Party</a></li> -->
+        <!-- <li><a href="#venue-anchor">Venue & Transportation</a></li> -->
+        <li><a href="#hotels-anchor">Lodging</a></li>
+        <li><a href="#travel-anchor">Travel</a></li>
+        <!-- <li><a href="#todoeat-anchor">To Do & Eat</a></li> -->
+        <li><a href="#registry-anchor">Registry</a></li>
+        <!-- <li><a href="#addtoourstory-anchor">Add To Our Story</a></li> -->
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
+<div class="body-content">
 {% include 'landing.html' %}
 {% include 'hotels.html' %}
 {% include 'travel.html' %}
 {% include 'registry.html' %}
-
-<script defer src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script defer src="/static/js/libs/noty-2.3.8.min.js"></script>
-<script defer src="/static/js/alerts.js"></script>
-<script defer src="/static/js/maps.js"></script>
-<script defer src="//maps.googleapis.com/maps/api/js?key=AIzaSyASSDLUc2gG42lfiBDPkU8UFbjTwPeLMpg&callback=initMap"></script>
-<script defer src="/static/js/home.js"></script>
-
+</div>
 </body>
 </html>
