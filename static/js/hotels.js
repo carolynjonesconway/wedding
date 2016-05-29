@@ -1,3 +1,4 @@
+"use strict";
 ;(function($){
     // Equalize the panel heights
     var panels = $("#hotels .panel");

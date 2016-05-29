@@ -1,3 +1,4 @@
+"use strict";
 function flash(msg, settings) {
     if (!msg) { return }
     settings = settings || {};

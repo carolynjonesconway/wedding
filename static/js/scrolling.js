@@ -1,3 +1,5 @@
+"use strict";
+
 // Add smooth scrolling to all links inside a navbar
 $(".navbar a").on('click', function(evt){
 
