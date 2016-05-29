@@ -21,13 +21,65 @@
       <!-- GOOGLE MAP -->
       <div class="row">
         <div class="col-xs-12">
-          <div class="map"></div>
+          <div id="map" class="map"></div>
         </div>
       </div>
     </div> <!-- .col-md-8 -->
   </div> <!-- .row -->
 </div> <!-- .page -->
+<script type="text/javascript">
+"use strict";
 
+function initMap() {
+  var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 8,
+        center: { lat: 42.3065913, lng: -71.045 },
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            position: google.maps.ControlPosition.BOTTOM_CENTER
+        },
+        fullscreenControl: true,
+        fullscreenControlOptions: {
+          position: google.maps.ControlPosition.BOTTOM_LEFT
+        }
+      }),
+      directionsService = new google.maps.DirectionsService,
+      directionsDisplay = new google.maps.DirectionsRenderer,
+      start = document.getElementById("start"),
+      end = document.getElementById("end");
+
+  directionsDisplay.setMap(map);
+
+  var mapControls = document.getElementById("map-controls");
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(mapControls);
+
+  var updateRoute = function() {
+    return calculateAndDisplayRoute(directionsService, directionsDisplay);
+  };
+  updateRoute();
+  start.addEventListener("change", updateRoute);
+  end.addEventListener("change", updateRoute);
+
+  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+    directionsService.route({
+      origin: { placeId: start.value },
+      destination: { placeId: end.value },
+      travelMode: google.maps.TravelMode.DRIVING
+    }, function(response, status) {
+      if (status === google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+      } else {
+        var consoleMsg = "Google Maps API warning: Directions failed due to " + status,
+            flashMsg = "Oops! Google Directions are currenty unavailable.";
+        console.warn ? console.warn(consoleMsg) : console.log(msg);
+        flash(flashMsg, {type: "error"});
+      }
+    });
+    return $.Deferred().promise();
+  }
+}
+</script>
 <!-- Map controls -->
 <div id="map-controls" class="container-fluid text-dark">
   <div class="row">
