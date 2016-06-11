@@ -54,7 +54,10 @@ function initMap() {
   var mapControls = document.getElementById("map-controls");
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(mapControls);
 
-  var updateRoute = function() {
+  var updateRoute = function(evt) {
+    if (evt) { // If it was triggered by changing the inputs
+      ga("send", "event", "Map", "change", "#map");
+    }
     return calculateAndDisplayRoute(directionsService, directionsDisplay);
   };
   updateRoute();
