@@ -2,7 +2,7 @@
 env/
 *.pyc
 *cache*
-static/js/noty-2.3.8/
-static/less/
+static
 Makefile
 diff.txt
+node_modules

@@ -1,0 +1,315 @@
+// Custom Fonts
+@font-face {
+    font-family: "Custom Cursive";
+    src: url("/static/fonts/dancing_script/DancingScript-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Custom Sans-Serif";
+    src: url("/static/fonts/raleway/Raleway-Medium.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Custom Sans-Serif";
+    src: url("/static/fonts/raleway/Raleway-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Custom Sans-Serif";
+    src: url("/static/fonts/raleway/Raleway-Light.ttf") format("truetype");
+    font-weight: 200;
+}
+
+// Custom Variables
+@text-color-dark: #0f1965;
+@background-color-dark: #1d2142;
+@light-gray: #cccccc;
+@transparent-white: rgba(255,255,255, 0.6);
+@default-font-size: 16px;
+@thick-white-border: 10px solid white;
+@med-white-border: 3px solid white;
+@sm-white-border: 2px solid white;
+
+// Mixins
+
+.box-shadow (@string) {
+    -webkit-box-shadow: @string;
+    -moz-box-shadow:    @string;
+    box-shadow:         @string;
+}
+
+.transition (@transition) {
+    -webkit-transition: @transition;  
+    -moz-transition:    @transition;
+    -ms-transition:     @transition; 
+    -o-transition:      @transition;  
+}
+
+/* Noty Styles */
+.noty_bar {
+    &.noty_type_information {
+        color: @text-color-dark;
+    }
+
+    .noty_message {
+        font-size: @default-font-size - 1px !important;
+    }
+    .close {
+        line-height: inherit;
+        float: right;
+        padding-left: 3px;
+        padding-bottom: 3px;
+    }
+}
+
+.navbar {
+    background-color: @transparent-white;
+    border-bottom: @sm-white-border;
+    .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+    .navbar-collapse {
+        text-align: center;
+    }
+}
+
+html, body {
+    background-color: @background-color-dark;
+    /*background-image: radial-gradient(circle farthest-corner at 50% 50%, @text-color-dark 0%, @background-color-dark 100%);*/
+    background-image: url("/static/image/boston-skyline.png");
+    background-size: cover;
+    background-attachment: fixed;
+    color: @text-color-dark;
+    font-family: "Custom Sans-Serif";
+    font-size: @default-font-size;
+}
+.navbar-default {
+    .nav>li {
+        >a {
+            color: @text-color-dark;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 13px;
+            text-decoration: none;
+
+            &:hover {
+                -webkit-animation: swing 1s;
+                animation: swing 1s;
+                color: @text-color-dark;
+            }
+        }
+        &.active>a {
+            background-color: white;
+            color: @text-color-dark;
+
+            &:hover, &:active {
+                background-color: white;
+            }
+        }
+    }
+}
+h1 {
+    font-family: "Custom Cursive", cursive;
+    font-size: 60px;
+    padding: 0.5em;
+}
+#head-count {
+    form {
+        a {
+            margin: auto;
+        }
+    }
+}
+input {
+    border-radius: 3px;
+    border: 1px solid @light-gray;
+    margin: 0.25em auto;
+    padding: 6px 0.5em;
+    vertical-align: middle;
+}
+.btn-default {
+    border-radius: 3px;
+    border: 1px solid @light-gray;
+    margin: 0.25em auto;
+    padding: 6px 0.5em;
+    vertical-align: middle;
+}
+.fill-line {
+    display: inline-block;
+    width: 100%;
+}
+h1, .large {
+    font-size: 6em;
+    line-height: 1;
+    .cursive;
+}
+
+h1 {
+    padding: 20px;
+}
+
+.medium {
+    font-size: 1.5em;
+}
+.small {
+    font-size: 1.15em;
+    line-height: 1.5;
+}
+.xs {
+    font-size: 0.9em;
+}
+.font-light {
+    font-weight: 200;
+}
+.input-group {
+    .box-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+    >* {
+        border-radius: 0;
+        border: none;
+    }
+    .input-group-select {
+        cursor: pointer;
+        -webkit-appearance: none;
+        -webkit-border-bottom-left-radius: 0px;
+        -webkit-border-top-left-radius: 0px;
+        padding-left: 1em;
+    }
+}
+
+.cursive {
+    font-family: "Custom Cursive";
+}
+
+.text-dark {
+    color: @text-color-dark;
+}
+
+@img-card-size: 200px;
+.img-card {
+    position: relative;
+    &:hover {
+        .caption {
+            background: @transparent-white;
+            border-radius: 50%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+            color: @text-color-dark;
+        }
+    }
+    img, .caption {
+        max-width: @img-card-size;
+        min-width: @img-card-size;
+    }
+}
+select.form-control {
+    background-color: white;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Chevron_down_font_awesome.svg/512px-Chevron_down_font_awesome.svg.png") no-repeat contain 0px 0px;
+    padding-left: 0px;
+}
+header {
+    .text-container {
+        padding-top: 70px;
+        padding-bottom: 70px;
+        text-align: justify;
+        color: @text-color-dark;
+        div {
+            line-height: 1;
+        }
+    }
+}
+#weddingparty {
+    #bridesmaids, #groomsmen {
+        .row {
+            padding: 25px 0;
+        }
+    }
+}
+#registry {
+    .logo {
+        display: table;
+        margin: 20px auto;
+
+        &:hover {
+            -webkit-animation: swing 1s;
+            animation: swing 1s;
+        }
+        img {
+            height: auto;
+            width: 10em;
+        }
+    }
+}
+#ourstory {
+    .carousel {
+        .item {
+            background-color: #ffffff;
+            border: 5px solid #333333;
+            color: black;
+            height: 720px;
+        }
+    }
+}
+.body-content>.container-fluid:odd {
+    .section-dark();
+}
+.section-dark {
+    background-color: @background-color-dark;
+    color: white;
+}
+#travel {
+    .map, #map {
+        height: 550px;
+        border: @med-white-border;
+    }
+
+    #map-controls {
+        margin: 20px;
+        * {
+            color: @text-color-dark;
+        }
+        select {
+            display: inline-block;
+            .box-shadow(0 0 5px #ccc);
+        }
+    }
+}
+#floating-panel {
+    .map {
+        border: 1px solid #999;
+        color: @text-color-dark;
+        left: 20%;
+        line-height: 30px;
+        padding: 0 10px;
+        padding: 5px;
+        position: absolute;
+        text-align: center;
+        top: 10px;
+        z-index: 5;
+    }
+}
+
+.panel {
+    background: none;
+    border: @med-white-border;
+    border-radius: 0;
+    color: white;
+
+    .panel-body {
+        font-weight: lighter;
+    }
+
+    &:hover, &.panel-solid {
+        background: white;
+        color: @text-color-dark;
+    }
+}
+
+.body-content>.container-fluid {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
