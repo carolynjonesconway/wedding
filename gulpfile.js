@@ -45,6 +45,8 @@ gulp.task("js", function() {
 
 gulp.task("watch", function() {
     gulp.watch(src + "/js/**/*", ["js"]);
+    gulp.watch(src + "/img/**/*", ["img"]);
+    gulp.watch(src + "/fonts/**/*", ["fonts"]);
     gulp.watch(src + "/less/**/*", ["styles"]);
 });
 
