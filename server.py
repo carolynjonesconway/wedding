@@ -41,5 +41,4 @@ def rsvp():
 
 if __name__ == "__main__":
     connect_to_db(app)
-    os.system("make static")
     app.run(debug=DEBUG, host='0.0.0.0', port=PORT)
