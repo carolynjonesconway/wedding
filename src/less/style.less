@@ -1,54 +1,11 @@
-// Custom Fonts
-@font-face {
-    font-family: "Custom Cursive";
-    src: url("/static/fonts/dancing_script/DancingScript-Regular.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Custom Sans-Serif";
-    src: url("/static/fonts/raleway/Raleway-Medium.ttf") format("truetype");
-}
-@font-face {
-    font-family: "Custom Sans-Serif";
-    src: url("/static/fonts/raleway/Raleway-Bold.ttf") format("truetype");
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: "Custom Sans-Serif";
-    src: url("/static/fonts/raleway/Raleway-Light.ttf") format("truetype");
-    font-weight: 200;
-}
-
-// Custom Variables
-@text-color-dark: #0f1965;
-@background-color-dark: #1d2142;
-@light-gray: #cccccc;
-@transparent-white: rgba(255,255,255, 0.6);
-@default-font-size: 16px;
-@thick-white-border: 10px solid white;
-@med-white-border: 3px solid white;
-@sm-white-border: 2px solid white;
-
-// Mixins
-
-.box-shadow (@string) {
-    -webkit-box-shadow: @string;
-    -moz-box-shadow:    @string;
-    box-shadow:         @string;
-}
-
-.transition (@transition) {
-    -webkit-transition: @transition;  
-    -moz-transition:    @transition;
-    -ms-transition:     @transition; 
-    -o-transition:      @transition;  
-}
+@import "./less/fonts.less";
+@import "./less/gallery.less";
+@import "./less/variables.less";
 
 /* Noty Styles */
 .noty_bar {
     &.noty_type_information {
-        color: @text-color-dark;
+        color: @theme1;
     }
 
     .noty_message {
@@ -64,7 +21,7 @@
 
 .navbar {
     background-color: @transparent-white;
-    border-bottom: @sm-white-border;
+    border-bottom: 2px solid @theme4;
     .navbar-nav {
         display: inline-block;
         float: none;
@@ -76,19 +33,17 @@
 }
 
 html, body {
-    background-color: @background-color-dark;
-    /*background-image: radial-gradient(circle farthest-corner at 50% 50%, @text-color-dark 0%, @background-color-dark 100%);*/
-    background-image: url("/static/img/boston-skyline.png");
-    background-size: cover;
-    background-attachment: fixed;
-    color: @text-color-dark;
+    background-color: @theme3;
+    background-size: contain;
+    color: @theme1;
     font-family: "Custom Sans-Serif";
     font-size: @default-font-size;
 }
+
 .navbar-default {
     .nav>li {
         >a {
-            color: @text-color-dark;
+            color: @theme1;
             text-transform: uppercase;
             font-weight: 700;
             font-size: 13px;
@@ -97,15 +52,15 @@ html, body {
             &:hover {
                 -webkit-animation: swing 1s;
                 animation: swing 1s;
-                color: @text-color-dark;
+                color: @theme1;
             }
         }
         &.active>a {
-            background-color: white;
-            color: @text-color-dark;
+            background-color: @theme4;
+            color: @theme1;
 
             &:hover, &:active {
-                background-color: white;
+                background-color: @theme4;
             }
         }
     }
@@ -115,13 +70,7 @@ h1 {
     font-size: 60px;
     padding: 0.5em;
 }
-#head-count {
-    form {
-        a {
-            margin: auto;
-        }
-    }
-}
+
 input {
     border-radius: 3px;
     border: 1px solid @light-gray;
@@ -136,10 +85,7 @@ input {
     padding: 6px 0.5em;
     vertical-align: middle;
 }
-.fill-line {
-    display: inline-block;
-    width: 100%;
-}
+
 h1, .large {
     font-size: 6em;
     line-height: 1;
@@ -163,8 +109,11 @@ h1 {
 .font-light {
     font-weight: 200;
 }
+p {
+    .font-light;
+}
 .input-group {
-    .box-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     >* {
         border-radius: 0;
         border: none;
@@ -183,7 +132,7 @@ h1 {
 }
 
 .text-dark {
-    color: @text-color-dark;
+    color: @theme1;
 }
 
 @img-card-size: 200px;
@@ -198,7 +147,7 @@ h1 {
             left: 0;
             right: 0;
             position: absolute;
-            color: @text-color-dark;
+            color: @theme1;
         }
     }
     img, .caption {
@@ -207,20 +156,43 @@ h1 {
     }
 }
 select.form-control {
-    background-color: white;
+    background-color: @theme4;
     background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Chevron_down_font_awesome.svg/512px-Chevron_down_font_awesome.svg.png") no-repeat contain 0px 0px;
     padding-left: 0px;
 }
-header {
+.header {
+    background-image: url("/static/img/engagement/engagement_photo_7_min.jpg");
+    background-size: cover;
+    background-position: center;
+    color: @theme1 !important;
+    position: relative;
+    min-height: 90vh; // overlay
+
+    .overlay { // overlay
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(255,255,255,0.5);
+    }
+
     .text-container {
         padding-top: 70px;
         padding-bottom: 70px;
+        position: absolute; // overlay
+        left: 0; // overlay
+        right: 0; // overlay
         text-align: justify;
-        color: @text-color-dark;
         div {
             line-height: 1;
         }
+        a.glyphicon {
+            color: @theme1;
+            text-decoration: none;
+        }
     }
+
 }
 #weddingparty {
     #bridesmaids, #groomsmen {
@@ -254,34 +226,35 @@ header {
         }
     }
 }
-.body-content>.container-fluid:odd {
-    .section-dark();
-}
 .section-dark {
     background-color: @background-color-dark;
-    color: white;
+    color: @theme4;
 }
+
+.section-light {
+}
+
 #travel {
     .map, #map {
         height: 550px;
-        border: @med-white-border;
+        border: 3px solid @theme4;
     }
 
     #map-controls {
         margin: 20px;
         * {
-            color: @text-color-dark;
+            color: @theme1;
         }
         select {
             display: inline-block;
-            .box-shadow(0 0 5px #ccc);
+            box-shadow: 0 0 5px #ccc;
         }
     }
 }
 #floating-panel {
     .map {
         border: 1px solid #999;
-        color: @text-color-dark;
+        color: @theme1;
         left: 20%;
         line-height: 30px;
         padding: 0 10px;
@@ -293,23 +266,31 @@ header {
     }
 }
 
-.panel {
-    background: none;
-    border: @med-white-border;
-    border-radius: 0;
-    color: white;
-
-    .panel-body {
-        font-weight: lighter;
-    }
-
-    &:hover, &.panel-solid {
-        background: white;
-        color: @text-color-dark;
-    }
-}
-
 .body-content>.container-fluid {
     padding-top: 60px;
     padding-bottom: 60px;
+
+    &:nth-of-type(even) {
+        .section-dark;
+    }
+
+    &:nth-of-type(odd) {
+        background-color: @theme2;
+        color: @theme4;
+    }
+
+}
+
+#gallery {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.modal-backdrop {
+    opacity: 0.8;
+}
+
+.panel {
+    background: none;
+    box-shadow: none;
 }

@@ -5,18 +5,27 @@ var minCss = require("gulp-clean-css");
 var minJs = require("gulp-uglify");
 var concat = require("gulp-concat");
 var del = require("del");
+var autoprefixer = require("gulp-autoprefixer");
+var sourcemaps = require("gulp-sourcemaps");
+var gutil = require("gulp-util");
 
 var src = __dirname + "/src";
 var dest = __dirname + "/static";
+
 
 gulp.task("styles", function() {
     return gulp.src([
             src + "/lib/css/**/*",
             src + "/less/**/*"
-        ])
+        ], {base: src})
+        // .pipe(sourcemaps.init())
         .pipe(concat("style.min.css"))
         .pipe(less())
+        .pipe(autoprefixer({
+            browsers: [">1%"]
+        }))
         .pipe(minCss())
+        // .pipe(sourcemaps.write("maps"))
         .pipe(gulp.dest(dest + "/css/"));
 });
 

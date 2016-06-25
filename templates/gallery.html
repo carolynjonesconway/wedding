@@ -2,17 +2,21 @@
 <div id="gallery" class="container-fluid">
     <div class="row">
         <div class="col-xs-12">
+            <h1 class="text-center">Gallery</h1>
+            <p class="text-center">
+                <a class="btn btn-default" data-toggle="collapse" data-target="#gallery-view-all">View All</a>
+            </p>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-xs-12">
             <div id="gallery-carousel" class="carousel slide">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     {% for i in range(20) %}
                     <div class="item {% if i == 0 %}active{% endif %}">
-                        <div class="col-xs-2">
-                            <a href="#">
-                                <img src="static/img/engagement/engagement_photo_{{ i + 1 }}.jpg" class="img-responsive">
-                            </a>
-                        </div>
+                        <img class="img-responsive thumbnail" src="static/img/engagement/engagement_photo_{{ i + 1 }}_min.jpg" data-pin-nopin=true>
                     </div>
                     {% endfor %}
                 </div>
@@ -26,7 +30,22 @@
                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
+            </div> <!-- #gallery-carousel -->
+
+            <div id="gallery-view-all" class="collapse">
+                <div>
+                    <div class="row">
+                        {% for i in range(20) %}
+                        <div class="col-md-2">
+                            <a data-toggle="modal" data-target="#gallery-modal">
+                                <img class="img-responsive thumbnail" src="static/img/engagement/engagement_photo_{{ i + 1 }}_min.jpg" data-pin-nopin=true>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </div>
