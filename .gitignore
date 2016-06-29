@@ -2,7 +2,6 @@
 env/
 *.pyc
 *cache*
-static
 Makefile
 diff.txt
 node_modules

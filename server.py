@@ -1,7 +1,7 @@
 import json
+import os
 
 from flask import Flask, render_template, request, make_response
-import os
 from sys import argv
 
 from models import db, connect_to_db, Invite, Guest
