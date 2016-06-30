@@ -8,6 +8,14 @@ var del = require("del");
 var autoprefixer = require("gulp-autoprefixer");
 var sourcemaps = require("gulp-sourcemaps");
 var gutil = require("gulp-util");
+var sequence = require("run-sequence").use(gulp);
+var aws = require("gulp-awspublish");
+var publisher = aws.create({
+    region: "us-east-1",
+    params: {
+        Bucket: "cocoandej"
+    }
+});
 
 var src = __dirname + "/src";
 var dest = __dirname + "/static";
@@ -52,6 +60,22 @@ gulp.task("js", function() {
         .pipe(gulp.dest(dest + "/js"))
 });
 
+gulp.task("clean", function(){
+    return del(dest);
+});
+
+gulp.task("build", ["styles", "img", "js", "fonts"]);
+
+gulp.task("push:s3", ["clean"], function(done) {
+    sequence("build", function() {
+        gulp.src(dest + "/**/*", { base: dest })
+            .pipe(gulp.dest("deployed"))
+            .pipe(publisher.publish({}, {force: true}))
+            .pipe(aws.reporter())
+            .on("end", done);
+    });
+});
+
 gulp.task("watch", function() {
     gulp.watch(src + "/js/**/*", ["js"]);
     gulp.watch(src + "/img/**/*", ["img"]);
@@ -59,10 +83,6 @@ gulp.task("watch", function() {
     gulp.watch(src + "/less/**/*", ["styles"]);
 });
 
-gulp.task("clean", function(){
-    return del(dest);
+gulp.task("default", ["clean"], function(){
+    return gulp.start("build");
 });
-
-gulp.task("build", ["styles", "img", "js", "fonts"]);
-
-gulp.task("default", ["build"]);
