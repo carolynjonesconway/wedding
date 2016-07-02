@@ -7,8 +7,8 @@ PRODUCTION_STATIC_URL = 'https://s3.amazonaws.com/cocoandej'
 def url_for(endpoint, **values):
     url = flask_url_for(endpoint, **values)
 
-    if not current_app.debug and url.startswith('/static'):
-        url = url.replace('/static', '', 1)
+    if not current_app.debug and url.startswith('static'):
+        url = url.replace('static', '', 1)
         return PRODUCTION_STATIC_URL + url
 
     return url
