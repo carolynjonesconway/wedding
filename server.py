@@ -4,9 +4,10 @@ import os
 from flask import Flask, render_template, request, make_response
 from sys import argv
 
+from app import build_app
 from models import db, connect_to_db, Invite, Guest
 
-app = Flask(__name__)
+app = build_app(__name__)
 DEBUG = 'PROD' not in os.environ
 PORT = os.environ.get('PORT', 5000)
 

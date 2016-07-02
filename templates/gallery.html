@@ -16,7 +16,7 @@
                 <div class="carousel-inner" role="listbox">
                     {% for i in range(20) %}
                     <div class="item {% if i == 0 %}active{% endif %}">
-                        <img class="img-responsive thumbnail" src="static/img/engagement/engagement_photo_{{ i + 1 }}_min.jpg" data-pin-nopin=true>
+                        <img class="img-responsive thumbnail" src="{{ url_for('static', filename='img/engagement/engagement_photo_{}_min.jpg'.format(i + 1)) }}" data-pin-nopin=true>
                     </div>
                     {% endfor %}
                 </div>
@@ -38,7 +38,7 @@
                         {% for i in range(20) %}
                         <div class="col-md-2">
                             <a data-toggle="modal" data-target="#gallery-modal">
-                                <img class="img-responsive thumbnail" src="static/img/engagement/engagement_photo_{{ i + 1 }}_min.jpg" data-pin-nopin=true>
+                                <img class="img-responsive thumbnail" src="{{ url_for('static', filename='img/engagement/engagement_photo_{}_min.jpg'.format(i + 1)) }}" data-pin-nopin=true>
                             </a>
                         </div>
                         {% endfor %}
