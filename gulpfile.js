@@ -69,7 +69,6 @@ gulp.task("build", ["styles", "img", "js", "fonts"]);
 gulp.task("push:s3", ["clean"], function(done) {
     sequence("build", function() {
         gulp.src(dest + "/**/*", { base: dest })
-            .pipe(gulp.dest("deployed"))
             .pipe(publisher.publish({}, {force: true}))
             .pipe(aws.reporter())
             .on("end", done);
