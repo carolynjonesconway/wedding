@@ -44,6 +44,13 @@
 {% include 'hotels.html' %}
 {% include 'travel.html' %}
 {% include 'registry.html' %}
+
+<div class="text-center container-fluid">
+    <div class="col-sm-6 col-sm-offset-3">
+        <p>Made for you with <span class="glyphicon glyphicon-heart"></span> by LilyPichu</p>
+        <img class="img-responsive img-circle img-center" data-pin-nopin="true" src="{{ url_for('static', filename='img/lily.jpg') }}">
+    </div>
+</div>
 </div>
 
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASSDLUc2gG42lfiBDPkU8UFbjTwPeLMpg&callback=initMap"></script>
