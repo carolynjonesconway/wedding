@@ -32,7 +32,7 @@ gulp.task("styles", function() {
         .pipe(autoprefixer({
             browsers: [">1%"]
         }))
-        .pipe(minCss())
+        // .pipe(minCss()) // This is breaking some of our CSS
         // .pipe(sourcemaps.write("maps"))
         .pipe(gulp.dest(dest + "/css/"));
 });
