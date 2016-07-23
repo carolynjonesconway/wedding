@@ -64,7 +64,8 @@ function initMap() {
         fullscreenControl: true,
         fullscreenControlOptions: {
           position: google.maps.ControlPosition.BOTTOM_LEFT
-        }
+        },
+        scrollwheel: false
       }),
       directionsService = new google.maps.DirectionsService,
       directionsDisplay = new google.maps.DirectionsRenderer,
