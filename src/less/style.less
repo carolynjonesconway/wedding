@@ -196,16 +196,24 @@ select.form-control {
 }
 #registry {
     .logo {
-        display: table;
-        margin: 20px auto;
+        display: table-cell;
 
         &:hover {
             -webkit-animation: swing 1s;
             animation: swing 1s;
         }
         img {
+            background: black;
             height: auto;
-            width: 10em;
+            width: @registry-logo-width;
+            border-radius: 5px;
+
+            &.macys {
+                padding: 0.4em 0.5em;
+            }
+            &.amazon {
+                padding: 0.5em 1em 0.25em;
+            }
         }
     }
 }
