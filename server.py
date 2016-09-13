@@ -12,5 +12,9 @@ PORT = os.environ.get('PORT', 5000)
 def home():
     return render_template("main.html")
 
+@app.route("/es")
+def home_es():
+    return render_template("es/main.html")
+
 if __name__ == "__main__":
     app.run(debug=DEBUG, host='0.0.0.0', port=PORT)
