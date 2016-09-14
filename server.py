@@ -7,8 +7,6 @@ DEBUG = 'PROD' not in os.environ
 PORT = os.environ.get('PORT', 5000)
 
 app = build_app(__name__)
-app.config['TEMPLATES_AUTO_RELOAD'] = DEBUG
-
 
 @app.route("/")
 def home():
