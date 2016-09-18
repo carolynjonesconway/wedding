@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <title>Lee/Conway Wedding</title>
+<style type="text/css">
+html, body {
+	background: #eee;
+	font-family: sans-serif;
+	color: #333;
+}
+h1 {
+	font-size: 8em;
+	margin-top: 0;
+	padding-top: 0;
+}
+p {
+	font-weight: lighter;
+	font-size: 1.2em;
+}
+.row {
+	padding-top: 2em;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6 col-md-2 col-md-offset-3">
+			<img src="{{ url_for('static', filename='img/okguy.png') }}" class="img-responsive">
+		</div>
+		<div class="col-xs-6 col-md-5">
+			<h1>404</h1>
+			<p>
+				<b>Oops! </b>We can't find what you're looking for here.
+				<br>Try heading back <a href="/">home</a>.
+			</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

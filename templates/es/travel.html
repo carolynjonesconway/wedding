@@ -1,0 +1,107 @@
+<a id="travel-anchor"></a>
+<div id="travel" class="page container-fluid">
+  <h1 class="text-center cursive">Travel</h1>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 small text-center">
+      Guests traveling by air should plan to fly in to Boston Logan International Airport (Airport Code: BOS). From there, subway users can take the Silver Line to the "Court House" stop, which is a 2 minute walk from the Envoy Hotel.
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-xs-12">
+      <!-- GOOGLE MAP -->
+      <div id="map" class="map"></div>
+    </div> <!-- .col-md-8 -->
+  </div> <!-- .row -->
+</div> <!-- .page -->
+
+<!-- Map controls -->
+<div id="map-controls" class="container-fluid text-dark">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="input-group">
+        <span class="input-group-addon">
+          Start
+        </span>
+          <select class="form-control input-group-select" id="start">
+            <option value="ChIJ51dcSH5w44kR2w1maWhcAGI">Mariott - Envoy Hotel</option>
+            <option value="ChIJz9x4wIJ644kRBP01KxOp7_c">Renaissance Boston Waterfront Hotel</option>
+            <option value="ChIJv4_a31p644kRfjLAdXhcjhM">Mariott - Courtyard Boston</option>
+            <option value="ChIJN0na1RRw44kRRFEtH8OUkww">Boston Logan International Airport</option>
+            <option value="ChIJxTCEOnlw44kROtPtIpMFsXo">Institute of Contemporary Art</option>
+          </select>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-group">
+        <span class="input-group-addon">
+          End
+        </span>
+        <select class="form-control input-group-select" id="end">
+          <option value="ChIJxTCEOnlw44kROtPtIpMFsXo">Institute of Contemporary Art</option>
+          <option value="ChIJN0na1RRw44kRRFEtH8OUkww">Boston Logan International Airport</option>
+          <option value="ChIJv4_a31p644kRfjLAdXhcjhM">Mariott - Courtyard Boston</option>
+          <option value="ChIJz9x4wIJ644kRBP01KxOp7_c">Renaissance Boston Waterfront Hotel</option>
+          <option value="ChIJ51dcSH5w44kR2w1maWhcAGI">Mariott - Envoy Hotel</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+"use strict";
+
+function initMap() {
+  var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 8,
+        center: { lat: 42.3065913, lng: -71.045 },
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            position: google.maps.ControlPosition.BOTTOM_CENTER
+        },
+        fullscreenControl: true,
+        fullscreenControlOptions: {
+          position: google.maps.ControlPosition.BOTTOM_LEFT
+        },
+        scrollwheel: false
+      }),
+      directionsService = new google.maps.DirectionsService,
+      directionsDisplay = new google.maps.DirectionsRenderer,
+      start = document.getElementById("start"),
+      end = document.getElementById("end");
+
+  directionsDisplay.setMap(map);
+
+  var mapControls = document.getElementById("map-controls");
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(mapControls);
+
+  var updateRoute = function(evt) {
+    if (evt) { // If it was triggered by changing the inputs
+      ga("send", "event", "Map", "change", "#map");
+    }
+    return calculateAndDisplayRoute(directionsService, directionsDisplay);
+  };
+  updateRoute();
+  start.addEventListener("change", updateRoute);
+  end.addEventListener("change", updateRoute);
+
+  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+    directionsService.route({
+      origin: { placeId: start.value },
+      destination: { placeId: end.value },
+      travelMode: google.maps.TravelMode.DRIVING
+    }, function(response, status) {
+      if (status === google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+      } else {
+        var consoleMsg = "Google Maps API warning: Directions failed due to " + status,
+            flashMsg = "Oops! Google Directions are currenty unavailable.";
+        console.warn ? console.warn(consoleMsg) : console.log(msg);
+        flash(flashMsg, {type: "error"});
+      }
+    });
+  }
+}
+</script>
